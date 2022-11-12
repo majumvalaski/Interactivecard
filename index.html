@@ -12,10 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
   <title>Interactive card</title>
 
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+
 </head>
 <body>
 
@@ -38,14 +35,19 @@
   CVC
   e.g. 123
 
-  Confirm
+  <button id="open-modal">Confirm</button>
+  <nav id="fade"></nav>
+  <nav id="modal">
+    <nav class="modal-header">
+    <h2>Thank you!</h2>
+    <button id="close-modal">Continue</button>
+    </nav>
 
-  <!-- Completed state start -->
+    <nav class="modal-body">
+      <p>We've added your card details</p>
+    </nav>
 
-  Thank you!
-  We've added your card details
-  Continue
-  
+  </nav>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Maria Julia Manasses Valaski</a>.
