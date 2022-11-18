@@ -4,110 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="./assets/css/styles.css"/>
   <script src="js/script.js" defer></script>
+
+  <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
-  <title>Interactive card</title>
-
 
 </head>
 <body>
-
-  <div class ="container">
-
-    <div class="front">
-      <div class="card-number-box">0000 0000 0000 0000</div>
-      <div class="flexbox">
-        <div class="box">
-          <span>Full name</span>
-          <div class="card-holder-name">Jane Appleseed</div>
-        </div>
-        <div class="box">
-          <span>expires</span>
-          <div class="expiration">
-            <span class="exp-month">00</span>
-            <span class="exp-year">00</span>
-          </div>
-        </div>
-        <div class="box">
-          <span>CVC</span>
-          <div class="cvc">000</div>
+  <main>
+    <section class="card">
+      <img class="background" src="./assets/images/bg-main-mobile.png" alt="Background">
+      <div class="cardBack">
+        <img src="./assets/images/bg-card-back.png" alt="Card Back">
+        <div class="cvc">
+          000
         </div>
       </div>
-    </div>
-    <form action="">
-      <div class="inputBox">
-
-        <span>CARD HOLDER</span>
-        <p><input type="text" class = "name" placeholder="e.g. Jane Appleseed"></p>
+      <div class="cardFront">
+        <img src="./assets/images/bg-card-front.png" alt="Card Front">
       </div>
-      
-      <div class="inputBox">
-        <span>CARD NUMBER</span>
-        <p><input type="number" class = "card-number" maxlength="16" placeholder="e.g. 1234 5678 9123 0000"></p>  <!--not working the maxlength/ step --> 
+      <div class="circle">
+        <div class="circleLarge"></div>
+        <div class="circleSmall"></div>
       </div>
-
-      <div class="flexbox"> 
-        <div class="inputBox">
-          <span> EXP. DATE (MM/YY)</span>
-          <p><select name="" id="" class="month-input"></p>
-            <option value="month" selected disabled>MM</option>
-            <option value="01">01</option>
-            <option value="02">02</option>
-            <option value="03">03</option>
-            <option value="04">04</option>
-            <option value="05">05</option>
-            <option value="06">06</option>
-            <option value="07">07</option>
-            <option value="08">08</option>
-            <option value="09">09</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-          </select>
-          
-          <select name="" id="" class="year-input">
-            <option value="year" selected disabled>YY</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-            <option value="25">25</option>
-            <option value="26">26</option>
-            <option value="27">27</option>
-            <option value="28">28</option>
-            <option value="29">29</option>
-            <option value="30">30</option>
-          </select> 
-        </div>   
-        
-        <div class="inputBox">
-          <p><span>CVC</span></p> 
-          <input type="text" class = "code" maxlength="3" placeholder="e.g. 123"> <!--not working the maxlength --> 
-        </div>
-
+      <div class="CardNumberFront">
+        0000 0000 0000 0000
+      </div>
+      <div class="cardholderNameFront"> 
+            jane appleseed
+      </div>
+      <div class="expDate">
+            00/00
+      </div>
       </div> 
-    </form>
-  </div>  
-  <p> <button id="open-modal">Confirm</button> </p>
-  <nav id="fade"></nav>
-  <nav id="modal">
-    <nav class="modal-header">
-    <h2>Thank you!</h2>
-    <button id="close-modal">Continue</button>
-    </nav>
+    </section>
 
-    <nav class="modal-body">
-      <p>We've added your card details</p>
-    </nav>
+     <!-- Information -->
+    <section id="information">
+        <form>
+          <label for="cardholderName" class="title">cardholder name</label>
+            <input type="text" id="text" class="inputTemplate" required placeholder="e.g. jane appleseed" />
+    
+          <label for="cardNumber" class="title">card number</label>
+            <input type="text" id="text" class="inputTemplate" required placeholder=" e.g. 1234 5678 9123 0000" />
+    
+          <label for="expDate" class="title">exp. date (MM/YY) CVC</label>
+            <input type="text" id="text" class="inputTemplate" required placeholder="MM" />
+            <input type="text" id="text" class="inputTemplate" required placeholder="YY" />
+            <input type="text" id="text" class="inputTemplate" required placeholder="e.g. 123" />
+        </form>
+      </section>
+    </main>
 
-  </nav>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Maria Julia Manasses Valaski, Rossana Sena</a>.
-  </div>
- 
+      <!-- Button -->
+      <button id="open-modal">Confirm</button>
+      <nav id="fade"></nav>
+      <nav id="modal">
+        <nav class="modal-header">
+        <h2>Thank you!</h2>
+        <button id="close-modal">Continue</button>
+        </nav>
+
+        <nav class="modal-body">
+          <p>We've added your card details</p>
+        </nav>
+      </nav>
+
+    <!-- Footer -->
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Maria Julia Manasses Valaski, Rossana Sena</a>.
+      </div>
+    </footer>
 </body>
 </html>
