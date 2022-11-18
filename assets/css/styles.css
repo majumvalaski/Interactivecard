@@ -50,6 +50,154 @@
         left: 9%;
     }
 
+    .circleLarge {
+        display: flex;
+        margin-right: 10px;
+        background: var(--main-color);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .circleSmall {
+        display: flex;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        border: 1px solid var(--main-color);
+    }
+    
+    .CardNumberFront {
+        display: inline-flex;
+        position: absolute;
+        top: 36%;
+        left: 9%;
+        letter-spacing: 1px;
+        font-size: 18px;
+        color: var(--main-color);
+    }
+    
+    .cardholderNameFront {
+        display: inline-flex;
+        position: absolute;
+        top: 44%;
+        left: 9%;
+        font-size: 9px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--main-color);
+    }
+    
+    .expDate {
+        display: inline-flex;
+        position: absolute;
+        top: 45%;
+        left: 65%;
+        font-size: 9px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--main-color);
+    }
+    
+    .cvc {
+        display: inline-flex;
+        position: absolute;
+        top: 18%;
+        left: 80%;
+        font-size: 9px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--main-color);
+    }
+    
+    /* infomation */
+    form {
+        margin: 30px;
+    }
+    
+    form label {
+        display:flex;
+        font-size: 15px;
+        margin: 0 0 10px;
+    }
+    
+    #information {
+        display: flex;
+        margin-top: 50px;
+        margin-left: -10px;
+        font-size: 10px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--tertiaty-color);
+    }
+    
+    .title {
+        font-size: 9px;
+        font-weight: bold;
+        color: var(--tertiaty-color)
+    }
+    
+    #text {
+        display: flex;
+        margin-bottom: 15px;
+        font-family: 'Space Grotesk', sans-serif;
+        text-transform: capitalize;
+        font-size: 12px;
+        border: 1px solid var(--secondary-color);
+        border-radius: 3px;
+    }
+    
+    .inputTemplate {
+        padding: 3px;
+    }
+    
+    /* button */
+    /* 
+    #open-modal {
+    
+    }
+    
+    nav #fade {
+    
+    }
+    
+    nav #modal {
+    
+    }
+    
+    nav #modal-header {
+    
+    }
+    
+    h2 {
+    
+    }
+    
+    #close-modal
+    
+    .modal-body {
+    
+    }
+    
+    p {
+    
+    } */
+    
+    /* footer */
+    
+    footer {
+         border: 1px solid red;
+    }
+    
+    .attribution { 
+        font-size: 15px; text-align: center; 
+        padding: 15px 0 15px;
+    }
+    
+    .attribution a { 
+        color:var(--quaternary-color);
+        text-decoration: none;
+    }
 }
 
 .attribution { 
