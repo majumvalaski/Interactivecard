@@ -13,3 +13,7 @@ document.querySelector('.month-input').oninput = () =>{
 document.querySelector('.year-input').oninput = () =>{
     document.querySelector('exp-year').innerText = document.querySelector('.year-input').value;
 }
+
+document.querySelector('.code').oninput = () =>{
+    document.querySelector('cvc').innerText = document.querySelector('.code').value;
+}
