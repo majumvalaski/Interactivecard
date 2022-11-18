@@ -42,6 +42,13 @@
         height: 150px;
     }
 
+    .circle {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        top: 25%;
+        left: 9%;
+    }
 
 }
 
