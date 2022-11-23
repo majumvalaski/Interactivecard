@@ -168,21 +168,49 @@ body {
         padding: 3px;
     }
 
-    /* button */
-    /* 
+    button {
+        padding: .6rem 1.2rem;
+        /*background-color: whitesmoke;*/
+        color: #fff;
+        border: none;
+        border-radius: 0.25rem;
+        opacity: 0.9;
+        font-size: 1rem;
+        transition: 0.4s;
+    }   
+    
     #open-modal {
-    
+        background-color:rgb(96, 48, 114);
+    }
+
+    button::hover{
+        opacity: 1;
+    }
+   
+    #fade {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 5;
+
+    }
+
+    #modal {
+        position: fixed;
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        z-index: 10;
+        width: 500px;
+        max-width: 90%;
     }
     
-    nav #fade {
-    
-    }
-    
-    nav #modal {
-    
-    }
-    
-    nav #modal-header {
+    /*
+    .modal-header {
     
     }
     
