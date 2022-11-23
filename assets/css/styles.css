@@ -4,42 +4,49 @@
     box-sizing: border-box;
 }
 
-@media only screen and (max-width: 530px) {
+:root {
+    --main-color: #FFF;
+    --primary-color: #DDDCDE;
+    --secondary-color: #8E8593;
+    --tertiaty-color: #21082F;
+    --quaternary-color: #3D51A2;
+    --purpleBackground: linear-gradient(148deg, rgba(2, 0, 36, 1) 0%, rgba(62, 32, 74, 1) 51%, rgba(2, 0, 36, 1) 100%);
+    --primary-font:'Space Grotesk', sans-serif;
+    --z-indexBackground: 1;
+    --z-indexCardFront: 2;
+    --z-indexCircle: 3;
+    --z-indexCardFront: 4;
+}
 
-    :root {
-        --main-color: #FFF;
-        --primary-color: #DDDCDE;
-        --secondary-color: #8E8593;
-        --tertiaty-color: #21082F;
-        --quaternary-color: #3D51A2;
-    }
+body {
+    font-size: 18px;
+    font-family: var(--primary-font);
+}
 
-    body {
-        background-image: url(../images/bg-main-mobile.png) no-repeat;
-        font-size: 18px;
-        font-family: 'Space Grotesk', sans-serif;
-    }
-
-    .background {
+@media only screen and (max-width: 600px) {
+    .purpleBackground {
+        position: absolute;
         width: 100vw;
-        height: 45vh;
+        height: 210px;
+        background: var(--purpleBackground);
     }
 
     /* cards */
+
     .cardBack img {
-        position: absolute;
-        top: 5%;
-        left: 20%;
+        position: relative;
         width: 260px;
         height: 150px;
+        z-index: var(--z-indexBackground);
     }
 
     .cardFront img {
-        position: absolute;
+        position: relative;
         top: 21%;
         left: 5%;
         width: 260px;
         height: 150px;
+        z-index: var(--z-indexCardFront);
     }
 
     .circle {
@@ -48,6 +55,7 @@
         align-items: center;
         top: 25%;
         left: 9%;
+        z-index: var(--z-indexCircle);
     }
 
     .circleLarge {
@@ -57,17 +65,19 @@
         border-radius: 50%;
         width: 30px;
         height: 30px;
+        z-index: var(--z-indexCircle);
     }
-    
+
     .circleSmall {
         display: flex;
         border-radius: 50%;
         width: 15px;
         height: 15px;
         border: 1px solid var(--main-color);
+        z-index: var(--z-indexCircle);
     }
-    
-    .CardNumberFront {
+
+    .cardNumberFront {
         display: inline-flex;
         position: absolute;
         top: 36%;
@@ -75,8 +85,9 @@
         letter-spacing: 1px;
         font-size: 18px;
         color: var(--main-color);
+        z-index: 4;
     }
-    
+
     .cardholderNameFront {
         display: inline-flex;
         position: absolute;
@@ -86,8 +97,9 @@
         letter-spacing: 1px;
         text-transform: uppercase;
         color: var(--main-color);
+        z-index: 4;
     }
-    
+
     .expDate {
         display: inline-flex;
         position: absolute;
@@ -97,8 +109,9 @@
         letter-spacing: 1px;
         text-transform: uppercase;
         color: var(--main-color);
+        z-index: 4;
     }
-    
+
     .cvc {
         display: inline-flex;
         position: absolute;
@@ -108,19 +121,11 @@
         letter-spacing: 1px;
         text-transform: uppercase;
         color: var(--main-color);
+        z-index: 4;
     }
-    
+
     /* infomation */
-    form {
-        margin: 30px;
-    }
-    
-    form label {
-        display:flex;
-        font-size: 15px;
-        margin: 0 0 10px;
-    }
-    
+
     #information {
         display: flex;
         margin-top: 50px;
@@ -130,27 +135,38 @@
         text-transform: uppercase;
         color: var(--tertiaty-color);
     }
-    
+
+    form {
+        margin: 30px;
+    }
+
+    form label {
+        display: flex;
+        font-size: 15px;
+        margin: 0 0 10px;
+    }
+
     .title {
         font-size: 9px;
         font-weight: bold;
         color: var(--tertiaty-color)
     }
-    
+
     #text {
         display: flex;
         margin-bottom: 15px;
         font-family: 'Space Grotesk', sans-serif;
-        text-transform: capitalize;
         font-size: 12px;
         border: 1px solid var(--secondary-color);
         border-radius: 3px;
     }
-    
-    .inputTemplate {
+
+    .inputTemplateText {
+        width: 170px;
+        height: 20px;
         padding: 3px;
     }
-    
+
     /* button */
     /* 
     #open-modal {
@@ -182,27 +198,30 @@
     p {
     
     } */
-    
+
     /* footer */
-    
+
     footer {
-         border: 1px solid red;
+        border: 1px solid red;
     }
-    
-    .attribution { 
-        font-size: 15px; text-align: center; 
+
+    .attribution {
+        font-size: 15px;
+        text-align: center;
         padding: 15px 0 15px;
     }
-    
-    .attribution a { 
-        color:var(--quaternary-color);
+
+    .attribution a {
+        color: var(--quaternary-color);
         text-decoration: none;
     }
 }
 
-.attribution { 
-    font-size: 11px; text-align: center; 
+.attribution {
+    font-size: 11px;
+    text-align: center;
 }
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }
