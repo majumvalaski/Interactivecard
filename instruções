@@ -1,0 +1,10 @@
+Mobile
+display flex
+justify column
+position para os cartões
+background static - arquivo: bg-main-mobile.png
+
+Desktop responsivo
+display flex
+justify row
+position

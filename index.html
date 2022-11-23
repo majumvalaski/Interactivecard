@@ -4,91 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/reset.css/">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/styles.css"/>
   <script src="js/script.js" defer></script>
+
+  <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
-  <title>Interactive card</title>
-
 
 </head>
 <body>
   <main>
     <section class="card">
       <img class="background" src="./assets/images/bg-main-mobile.png" alt="Background">
-
       <div class="cardBack">
         <img src="./assets/images/bg-card-back.png" alt="Card Back">
         <div class="cvc">
           000
         </div>
       </div>
-
       <div class="cardFront">
         <img src="./assets/images/bg-card-front.png" alt="Card Front">
       </div>
-
       <div class="circle">
         <div class="circleLarge"></div>
         <div class="circleSmall"></div>
       </div>
-
       <div class="CardNumberFront">
         0000 0000 0000 0000
       </div>
-
-      <div class="cardholderNameFront">
-        Jane Appleseed
+      <div class="cardholderNameFront"> 
+            jane appleseed
       </div>
-
       <div class="expDate">
-        00/00
+            00/00
       </div>
+      </div> 
     </section>
-    
-    <!-- Information-->
+
+     <!-- Information -->
     <section id="information">
-      <form>
-        <label for="cardholderName" class="title">Cardholder Name</label>
-          <input type="text" id="text" class="inputTemplate" required placeholder="e.g. jane appleseed" />
-        <label for="cardNumber" class="title">card number</label>
-          <input type="text" id="text" class="inputTemplate" required placeholder=" e.g. 1234 5678 9123 0000" />
-        <label for="expDate" class="title">exp. date (MM/YY) CVC</label>
-          <input type="text" id="text" class="inputTemplate" required placeholder="MM" />
-          <input type="text" id="text" class="inputTemplate" required placeholder="YY" />
-          <input type="text" id="text" class="inputTemplate" required placeholder="e.g. 123" />
-
-      </form>
-    </section>
-  </main>
-
+        <form>
+          <label for="cardholderName" class="title">cardholder name</label>
+            <input type="text" id="text" class="inputTemplate" required placeholder="e.g. jane appleseed" />
     
+          <label for="cardNumber" class="title">card number</label>
+            <input type="text" id="text" class="inputTemplate" required placeholder=" e.g. 1234 5678 9123 0000" />
+    
+          <label for="expDate" class="title">exp. date (MM/YY) CVC</label>
+            <input type="text" id="text" class="inputTemplate" required placeholder="MM" />
+            <input type="text" id="text" class="inputTemplate" required placeholder="YY" />
+            <input type="text" id="text" class="inputTemplate" required placeholder="e.g. 123" />
+        </form>
+      </section>
+    </main>
 
-  <!--Button-->
-  <p> <button id="open-modal">Confirm</button> </p>
-  <nav id="fade"></nav>
-  <nav id="modal">
-    <nav class="modal-header">
-    <h2>Thank you!</h2>
-    <button id="close-modal">Continue</button>
-    </nav>
+      <!-- Button -->
+      <button id="open-modal">Confirm</button>
+      <nav id="fade"></nav>
+      <nav id="modal">
+        <nav class="modal-header">
+        <h2>Thank you!</h2>
+        <button id="close-modal">Continue</button>
+        </nav>
 
-    <nav class="modal-body">
-      <p>We've added your card details</p>
-    </nav>
+        <nav class="modal-body">
+          <p>We've added your card details</p>
+        </nav>
+      </nav>
 
-  </nav>
-  </main>
-  <!-- Footer -->
-  <footer>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Maria Julia Manasses Valaski, Rossana Sena</a>.
-    </div>
-  </footer>  
- 
+    <!-- Footer -->
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Maria Julia Manasses Valaski, Rossana Sena</a>.
+      </div>
+    </footer>
 </body>
 </html>
