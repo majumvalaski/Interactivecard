@@ -171,7 +171,7 @@ body {
     button {
         padding: .6rem 1.2rem;
         /*background-color: whitesmoke;*/
-        color: #fff;
+        color: black;
         border: none;
         border-radius: 0.25rem;
         opacity: 0.9;
@@ -207,13 +207,25 @@ body {
         z-index: 10;
         width: 500px;
         max-width: 90%;
+        padding: 1.2rem;
+        border-radius: .5rem;
     }
     
-    /*
+    
     .modal-header {
-    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgb(85, 5, 135);
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
     }
     
+    #modal.hide, 
+    #fade.hide {
+        opacity: 0;
+    }
+    /*
     h2 {
     
     }
