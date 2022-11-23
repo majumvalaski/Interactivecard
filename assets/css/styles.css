@@ -174,6 +174,7 @@ body {
         color: black;
         border: none;
         border-radius: 0.25rem;
+        cursor: pointer;
         opacity: 0.9;
         font-size: 1rem;
         transition: 0.4s;
@@ -181,6 +182,7 @@ body {
     
     #open-modal {
         background-color:rgb(96, 48, 114);
+        align-items: right;
     }
 
     button::hover{
