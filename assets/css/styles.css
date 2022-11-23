@@ -187,6 +187,11 @@ body {
         opacity: 1;
     }
    
+    #fade, #modal {
+        transition: .5s;
+        opacity: 1;
+        pointer-events: all; /* habilitando os eventos de click quando opacidade 1 */ 
+    }
     #fade {
         position: fixed;
         top: 0;
@@ -225,25 +230,15 @@ body {
     #fade.hide {
         opacity: 0;
     }
-    /*
-    h2 {
     
+    #modal.hide {
+        top: 0; /* quando está escondido está em cima, ou seja, vem de cima quando aparece */
     }
-    
-    #close-modal
-    
-    .modal-body {
-    
-    }
-    
-    p {
-    
-    } */
 
     /* footer */
 
     footer {
-        border: 1px solid red;
+        border: none;
     }
 
     .attribution {
