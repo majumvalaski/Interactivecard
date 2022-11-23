@@ -13,7 +13,7 @@
     --purpleBackground: linear-gradient(148deg, rgba(2, 0, 36, 1) 0%, rgba(62, 32, 74, 1) 51%, rgba(2, 0, 36, 1) 100%);
     --primary-font:'Space Grotesk', sans-serif;
     --z-indexBackground: 1;
-    --z-indexCardFront: 2;
+    --z-indexCard: 2;
     --z-indexCircle: 3;
     --z-indexCardFront: 4;
 }
@@ -32,21 +32,33 @@ body {
     }
 
     /* cards */
-
+    
     .cardBack img {
         position: relative;
         width: 260px;
         height: 150px;
         z-index: var(--z-indexBackground);
     }
-
+    
+    .cvc {
+        display: inline-flex;
+        position: absolute;
+        top: 18%;
+        left: 80%;
+        font-size: 9px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--main-color);
+        z-index: var(--z-indexCard);
+    }
+    
     .cardFront img {
         position: relative;
         top: 21%;
         left: 5%;
         width: 260px;
         height: 150px;
-        z-index: var(--z-indexCardFront);
+        z-index: var(--z-indexCard);
     }
 
     .circle {
@@ -85,7 +97,7 @@ body {
         letter-spacing: 1px;
         font-size: 18px;
         color: var(--main-color);
-        z-index: 4;
+        z-index: var(--z-indexCardFront);
     }
 
     .cardholderNameFront {
@@ -97,7 +109,7 @@ body {
         letter-spacing: 1px;
         text-transform: uppercase;
         color: var(--main-color);
-        z-index: 4;
+        z-index: var(--z-indexCardFront);
     }
 
     .expDate {
@@ -109,20 +121,9 @@ body {
         letter-spacing: 1px;
         text-transform: uppercase;
         color: var(--main-color);
-        z-index: 4;
+        z-index: var(--z-indexCardFront);
     }
 
-    .cvc {
-        display: inline-flex;
-        position: absolute;
-        top: 18%;
-        left: 80%;
-        font-size: 9px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: var(--main-color);
-        z-index: 4;
-    }
 
     /* infomation */
 
