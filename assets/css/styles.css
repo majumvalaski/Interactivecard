@@ -14,7 +14,7 @@
     --purpleBackground: linear-gradient(148deg, rgba(2, 0, 36, 1) 0%, rgba(62, 32, 74, 1) 51%, rgba(2, 0, 36, 1) 100%);
     /* font */
     --main-fontSize: 18px;
-    --main-fontFamily:'Space Grotesk', sans-serif;
+    --main-fontFamily: 'Space Grotesk', sans-serif;
     /* z-index */
     --z-indexBackground: 1;
     --z-indexCardBack: 2;
@@ -25,11 +25,14 @@
 body {
     font-size: var(--main-fontSize);
     font-family: var(--main-fontFamily);
+    width: 100%;
+    height: 100%;
 }
 
 /* MOBILE */
 
 @media only screen and (max-width: 600px) {
+
     /* cards */
     .purpleBackground {
         position: absolute;
@@ -37,7 +40,7 @@ body {
         height: 220px;
         background: var(--purpleBackground);
     }
-    
+
     /* card back */
     .cardBack img {
         position: relative;
@@ -47,7 +50,7 @@ body {
         height: 150px;
         z-index: var(--z-indexCardBack);
     }
-    
+
     .cvc {
         display: inline-flex;
         position: relative;
@@ -71,9 +74,13 @@ body {
         z-index: var(--z-indexCardFront);
     }
 
-    .circle {
+    .circle, .circleLarge, .circleSmall {
         display: inline-flex;
         position: relative;
+        border-radius: 50%;
+    }
+
+    .circle {
         align-items: center;
         top: -170px;
         left: -210px;
@@ -81,8 +88,6 @@ body {
     }
 
     .circleLarge {
-        display: inline-flex;
-        position: relative;
         width: 30px;
         height: 30px;
         border-radius: 50px;
@@ -122,7 +127,7 @@ body {
         z-index: var(--z-indexCardFront);
     }
 
-    .expDate {
+    .expDateCard {
         display: inline;
         position: relative;
         top: -90px;
@@ -152,50 +157,47 @@ body {
 
     form label {
         display: flex;
-        flex-direction: column;
-        width: 80%;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 10px;
     }
-    
+
     .information input {
         margin-top: 0.5rem;
         margin-bottom: 1rem;
         padding: 0.5rem;
+        width: 100%;
         font-family: var(--main-fontFamily);
     }
 
-    .informationDatacvc {
-        display: flex; 
+    .informationDate {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
     }
 
-    .informationData input {
-        width: 60%;
-    }
-    
-    .informationMonthYear {
+    .informationcvc {
         display: flex;
-        justify-content:left;
-        gap: 0.85rem;
+        flex-direction: row;
+        width: 30%;
+        margin-left: 2.4rem;
     }
-    
 
-    .informationData {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
+    #month, #year {
+        width: 4rem;
+        margin-right: .5rem;
     }
-    
-    .informationData input {
+
+    .templateMonth .templateYear {
+        display: flex;
+        margin-right: 1rem;
         width: 40%;
     }
-    
-    .informationMonthYear {
-        display: flex;
-        justify-content:left;
-        gap: 0.85rem;
-    }
-    
-    .informationcvc {
-        width: 50%;
+
+    #cvc {
+        width: 7rem;
+        margin-right: .5rem;
     }
 
     /* button */
@@ -205,26 +207,32 @@ body {
         color: black;
         border: none;
         border-radius: 0.25rem;
+        margin-top: -1rem;
+        margin-left: 3rem;
         cursor: pointer;
         opacity: 0.9;
         font-size: 1rem;
+        width: 75%;
+        font-family: var(--main-fontFamily);
         transition: 0.4s;
-    }   
-    
+    }
+
     #open-modal {
-        background-color:rgb(96, 48, 114);
+        background-color: rgb(91, 38, 110);
         align-items: right;
     }
 
-    button::hover{
+    button:hover {
         opacity: 1;
     }
-   
+
     #fade, #modal {
         transition: .5s;
         opacity: 1;
-        pointer-events: all; /* habilitando os eventos de click quando opacidade 1 */ 
+        pointer-events: all;
+        /* habilitando os eventos de click quando opacidade 1 */
     }
+
     #fade {
         position: fixed;
         top: 0;
@@ -238,8 +246,8 @@ body {
 
     #modal {
         position: fixed;
-        left:50%;
-        top:50%;
+        left: 50%;
+        top: 50%;
         transform: translate(-50%, -50%);
         background-color: #fff;
         z-index: 10;
@@ -248,7 +256,7 @@ body {
         padding: 1.2rem;
         border-radius: .5rem;
     }
-    
+
     .modal-header {
         display: flex;
         justify-content: space-between;
@@ -259,126 +267,153 @@ body {
     }
 
     .attribution {
-    font-size: 11px;
-    text-align: center;
+        font-size: 9px;
+        text-align: center;
+        margin-top: .3rem;
     }
 }
 
 /* DESKTOP */
 
-@media only screen and (min-width: 630px) {
+@media only screen and (min-width: 601px) {
+
     /* cards */
+    .cards {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+    }
+
+    /* background */
     .purpleBackground {
         display: flex;
-        width: 25%;
-        height: 100vh;
+        width: 50%;
+        height: 100%;
+        left: 5rem;
         background: var(--purpleBackground);
         z-index: var(--z-indexBackground);
     }
 
-    /* card back */
-    .cardBack img {
-        position: absolute;
-        left: 13rem;
-        top: 20rem;
-        width: 260px;
-        height: 150px;
-        z-index: var(--z-indexCardBack);
-    }
-    
-    .cvc {
-        position: absolute;
-        left: 25.5rem;
-        top: 24.3rem;
-        font-size: 9px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: var(--main-color);
-        z-index: var(--z-indexCardBack);
+    /* card front */
+    .cardFront {
+        display: flex;
+        position: relative;
+        width: 33.4rem;
+        top: -40rem;
+        left: 3rem;
     }
 
-    /* card front */
     .cardFront img {
-        display: inline-flex;
+        display: flex;
         position: relative;
-        top: -29.5rem;
-        left: 10rem;
         width: 260px;
         height: 150px;
+        left: 5rem;
         z-index: var(--z-indexCardFront);
     }
 
-    .circle {
+    .circle, .circleLarge, .circleSmall {
         display: inline-flex;
         position: relative;
+        border-radius: 50%;
+    }
+
+    .circle {
         align-items: center;
-        top: -36rem;
-        left: -5rem;
+        width: 4rem;
+        height: 4rem;
+        top: 1rem;
+        left: -10rem;
         z-index: var(--z-indexCircles);
     }
 
     .circleLarge {
-        display: inline-flex;
-        position: relative;
-        width: 30px;
-        height: 30px;
-        border-radius: 50px;
+        width: 2rem;
+        height: 2rem;
         background: var(--main-color);
     }
 
     .circleSmall {
-        display: inline-flex;
-        position: relative;
-        width: 15px;
-        height: 15px;
-        border-radius: 50px;
+        width: 1rem;
+        height: 1rem;
         margin-left: 10px;
         border: 1px solid var(--main-color);
     }
 
-    .cardNumberFront {
+    .cardNumberFront, .cardholderNameFront, .expDateCard {
         display: inline-flex;
-        position: relative;
-        top: -33rem;
-        left: -9rem;
+        position: absolute;
+        height: 1.2rem;
         letter-spacing: 1.5px;
-        font-size: 18px;
         color: var(--main-color);
         z-index: var(--z-indexCardFront);
+    }
+
+    .cardNumberFront {
+        width: 13rem;
+        top: 5rem;
+        left: 6rem;
+        font-size: 16px;
     }
 
     .cardholderNameFront {
-        display: inline;
+        width: 7rem;
+        top: 7.5rem;
+        left: 6rem;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    .expDateCard {
+        width: 2.2rem;
+        top: 7.5rem;
+        left: 17rem;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    /* card back */
+
+    .cardBack {
+        display: flex;
         position: relative;
-        top: -31rem;
-        left: -23.5rem;
-        font-size: 9px;
+        width: 33.4rem;
+        top: -20rem;
+        left: 3rem;
+    }
+
+    .cardBack img, .cvc {
+        display: flex;
+        position: relative;
+        z-index: var(--z-indexCardBack);
+    }
+
+    .cardBack img {
+        width: 260px;
+        height: 150px;
+        left: 10rem;
+    }
+
+    .cvc {
+        width: 2rem;
+        height: 1rem;
+        top: 4.3rem;
+        left: 5rem;
+        font-size: 10px;
         letter-spacing: 1px;
         text-transform: uppercase;
         color: var(--main-color);
-        z-index: var(--z-indexCardFront);
     }
-
-    .expDate {
-        display: inline;
-        position: relative;
-        top: -31rem;
-        left: -17rem;
-        font-size: 9px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: var(--main-color);
-        z-index: var(--z-indexCardFront);
-    }
-
 
     /* information */
     .information {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        height: 100%;
-        margin-top: -3rem;
+        position: absolute;
+        width: 35%;
+        height: 50%;
+        top: 10rem;
+        left: 35rem;
+        margin-left: auto;
+        margin-right: auto;
         padding: 0 3rem;
         font-size: 8px;
         font-weight: bold;
@@ -389,79 +424,95 @@ body {
 
     form label {
         display: flex;
-        flex-direction: column;
-        width: 80%;
+        flex-direction: row;
+        width: 100%;
+        font-size: 10px;
     }
-    
+
     .information input {
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
+        margin-top: .5rem;
+        margin-bottom: 1.5rem;
         padding: 0.5rem;
+        width: 100%;
+        height: 100%;
         font-family: var(--main-fontFamily);
     }
 
-    .informationDatacvc {
-        display: flex; 
+    .informationDate {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 50%;
+        padding-right: 2rem;
     }
 
-    .informationData input {
-        width: 60%;
-    }
-    
-    .informationMonthYear {
-        display: flex;
-        justify-content:left;
-        gap: 0.85rem;
-    }
-    
-
-    .informationData {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-    }
-    
-    .informationData input {
-        width: 40%;
-    }
-    
-    .informationMonthYear {
-        display: flex;
-        justify-content:left;
-        gap: 0.85rem;
-    }
-    
     .informationcvc {
-        width: 50%;
+        display: flex;
+        flex-direction: row;
+        width: 20%;
+        height: 50%;
+        margin-left: 1rem;
+        padding-left: .2rem;
     }
+
+    .informationMonthYearcvc {
+        display: flex;
+        width: 100%;
+        height: 2.5rem;
+    }
+
+    #month, #year {
+        width: 3.6rem;
+        margin-right: .5rem;
+    }
+
+    .templateMonth .templateYear {
+        display: flex;
+        margin-right: 1rem;
+        width: 10%;
+    }
+
+    #cvc {
+        width: 6rem;
+        margin-right: .5rem;
+    }
+
 
     /* button */
     button {
+        display: flex;      
+        width: 25%;
         padding: .6rem 1.2rem;
         /*background-color: whitesmoke;*/
         color: black;
         border: none;
         border-radius: 0.25rem;
+        margin-top: -1rem;
+        margin-left: 3rem;
         cursor: pointer;
         opacity: 0.9;
         font-size: 1rem;
+        font-family: var(--main-fontFamily);
         transition: 0.4s;
-    }   
-    
-    #open-modal {
-        background-color:rgb(96, 48, 114);
-        align-items: right;
     }
 
-    button::hover{
+    #open-modal {
+        display: flex;
+        background-color: rgb(91, 38, 110);
+        justify-content: center;
+    }
+
+    button:hover {
         opacity: 1;
     }
-   
+
     #fade, #modal {
         transition: .5s;
         opacity: 1;
-        pointer-events: all; /* habilitando os eventos de click quando opacidade 1 */ 
+        pointer-events: all;
+        /* habilitando os eventos de click quando opacidade 1 */
     }
+
     #fade {
         position: fixed;
         top: 0;
@@ -475,8 +526,8 @@ body {
 
     #modal {
         position: fixed;
-        left:50%;
-        top:50%;
+        left: 50%;
+        top: 50%;
         transform: translate(-50%, -50%);
         background-color: #fff;
         z-index: 10;
@@ -485,7 +536,7 @@ body {
         padding: 1.2rem;
         border-radius: .5rem;
     }
-    
+
     .modal-header {
         display: flex;
         justify-content: space-between;
@@ -496,7 +547,11 @@ body {
     }
 
     .attribution {
-    font-size: 11px;
-    text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 5%;
+        bottom: 0;
+        font-size: 10px;
+        text-align: center;
     }
 }
