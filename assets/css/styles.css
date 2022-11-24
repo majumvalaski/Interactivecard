@@ -224,25 +224,6 @@ body {
     button:hover {
         opacity: 1;
     }
-
-    #fade, #modal {
-        transition: .5s;
-        opacity: 1;
-        pointer-events: all;
-        /* habilitando os eventos de click quando opacidade 1 */
-    }
-
-    #fade {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        z-index: 5;
-
-    }
-
     #modal {
         position: fixed;
         left: 50%;
@@ -254,6 +235,24 @@ body {
         max-width: 90%;
         padding: 1.2rem;
         border-radius: .5rem;
+    }
+
+    #fade, #modal {
+        transition: .5s;
+        opacity: 1;
+        pointer-events: all;
+        /* habilitando os eventos de click quando opacidade 1 */
+    }
+
+    #fade {
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 5;
+
     }
 
     .modal-header {
@@ -522,7 +521,9 @@ body {
         z-index: 5;
 
     }
-
+    #close-modal {
+        margin-top: .1rem;
+    }
     #modal {
         position: fixed;
         left: 50%;
